@@ -37,7 +37,6 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///////////////////////////////////////////////////////////////////////////////
-
 #include <FaceTracker/Tracker.h>
 #include <opencv/highgui.h>
 #include <opencv2/opencv.hpp>
@@ -2387,7 +2386,7 @@ void rankMouseEvent(int event, int x, int y, int flags, void *i)
       if (x > 94 && x < 166) //다음으로 넘기기
       {
 
-        Mat nextPage = imread("../image/rank1.bmp", CV_LOAD_IMAGE_COLOR);
+        Mat nextPage = imread("../image/rank1_c.PNG", CV_LOAD_IMAGE_COLOR);
         printMyScore(nextPage);
         imshow("GAME RANK", nextPage);
         waitKey(1);
@@ -2422,7 +2421,7 @@ void gameRank()
   namedWindow("GAME RANK", WINDOW_GUI_NORMAL);
  resizeWindow("GAME RANK", 640, 480);
 
-  Mat image = cv::imread("../image/rank1.bmp", CV_LOAD_IMAGE_COLOR);
+  Mat image = cv::imread("../image/rank1_c.PNG", CV_LOAD_IMAGE_COLOR);
   //ranking(user_idx);
 
   int high_score = previousScore();
@@ -2542,13 +2541,13 @@ void endMouseEvent(int event, int x, int y, int flags, void *i = 0)
 
   if (event == CV_EVENT_LBUTTONDOWN)
   {
-    if (y > 367 && y < 426)
+    if (y > 400  && y < 450)
     {
       if (x > 143 && x < 280)
       { //start
         gameRank();
       }
-      else if (x > 355 && x < 500) //rule
+      else if (x > 380 && x < 550) //rule
       {
         exit(0);
       }
@@ -2565,7 +2564,7 @@ void endGame()
   namedWindow("GAME END", WINDOW_GUI_NORMAL);
   resizeWindow("GAME END", 640, 480);
 
-  Mat image = cv::imread("../image/End rank.bmp", CV_LOAD_IMAGE_COLOR);
+  Mat image = cv::imread("../image/End rank_c.PNG", CV_LOAD_IMAGE_COLOR);
 
   int high_score = previousScore();
   sprintf(hhh, "%d", high_score);
@@ -2601,15 +2600,15 @@ void onMouseEvent(int event, int x, int y, int flags, void *i = 0)
 
   if (event == CV_EVENT_LBUTTONDOWN)
   {
-    if (x > 151 && x < 300 && y > 247 && y < 299)
+    if (x > 144 && x < 307 && y > 240 && y < 303)
     { //start
-      Mat push_button = imread("../image/start_push.bmp", CV_LOAD_IMAGE_COLOR);
+      Mat push_button = imread("../image/start_push_c.PNG", CV_LOAD_IMAGE_COLOR);
       imshow("YAM-YAM", push_button);
-      push_button = imread("../image/ready.bmp", CV_LOAD_IMAGE_COLOR);
+      push_button = imread("../image/ready_c.PNG", CV_LOAD_IMAGE_COLOR);
       imshow("YAM-YAM", push_button);
       waitKey(1);
       sleep(1);
-      push_button = imread("../image/START.bmp", CV_LOAD_IMAGE_COLOR);
+      push_button = imread("../image/START_c.PNG", CV_LOAD_IMAGE_COLOR);
       imshow("YAM-YAM", push_button);
       waitKey(1);
       sleep(1);
@@ -2617,21 +2616,21 @@ void onMouseEvent(int event, int x, int y, int flags, void *i = 0)
       startGame();
 
     }
-    else if (x > 345 && x < 491 && y > 247 && y < 299) //rule
+    else if (x > 335 && x < 496 && y > 240 && y < 303) //rule
     {
-      Mat push_button = imread("../image/rule_push.bmp", CV_LOAD_IMAGE_COLOR);
+      Mat push_button = imread("../image/rule_push_c.PNG", CV_LOAD_IMAGE_COLOR);
       imshow("YAM-YAM", push_button);
       waitKey(1);
       gameRule();
     }
-    else if (x > 151 && x < 300 && y > 350 && y < 410)
+    else if (x > 144 && x < 307 && y > 346 && y < 410)
     { //rank
-      Mat push_button = imread("../image/rank_push.bmp", CV_LOAD_IMAGE_COLOR);
+      Mat push_button = imread("../image/rank_push_c.PNG", CV_LOAD_IMAGE_COLOR);
       imshow("YAM-YAM", push_button);
       waitKey(1);
       gameRank();
     }
-    else if (x > 345 && x < 491 && y > 350 && y < 410)
+    else if (x > 345 && x < 491 && y > 346 && y < 410)
     { //exit
       exit(0);
     }
@@ -2664,7 +2663,7 @@ int main(int argc, char **argv)
   
   if (user_idx != -1)
   {
-    Mat image = cv::imread("../image/intro.bmp", CV_LOAD_IMAGE_COLOR);
+    Mat image = cv::imread("../image/intro_c.PNG", CV_LOAD_IMAGE_COLOR);
     if (image.empty())
     {
       cout << "Could not open or find the image" << endl;
