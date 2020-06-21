@@ -80,6 +80,12 @@ OpenGL : https://www.opengl.org/
 
 
 ## 8. 라이센스
-MIT License
+YAM-YAM : MIT License
+
+FaceTracker : MIT License
+
+OpenCV : BSD License
+
+OpenGL : Copyright (c) 2020 The Khronos Group Inc.
 
 
