@@ -35,7 +35,9 @@ Develop Enviornment : Ubuntu Linux Extension Pack(16.04 버전 사용)
 1.opencv 설치
 
 4.0 버전 이상만 호환가능합니다.
+
 https://sunkyoo.github.io/opencv4cvml/OpenCV4Linux.html 
+
 참고하여 설치해주세요.
 
 2.opengl 설치
@@ -54,8 +56,9 @@ cd bin
 ./food_fighter
 ```
 4.성능향상
-gpu 이용하여 성능 향상
-가상머신에선 사용 불가능
+
+gpu를 이용하여 성능 향상이 가능합니다
+ (가상머신에선 사용 불가능)
 
 (1) FaceTracker.cpp 내 dlib 주석 해제
 
