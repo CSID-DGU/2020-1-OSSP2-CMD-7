@@ -143,7 +143,7 @@ void init()
     //화면 지울때 사용할 색 지정
     glClearColor(0.0, 0.0, 0.0, 0.0);
 }
-int start_game()
+int start_game() //game start fucntion
 {
     
     int argc = 0;
@@ -159,7 +159,7 @@ int start_game()
     wSize2[2] = 7;
     facemark = cv::face::FacemarkLBF::create();
     
-    faceDetector.load("../../data/haarcascade_frontalface_alt2.xml");
+    faceDetector.load("../../data/haarcascade_frontalface_alt2.xml"); //face detect
     facemark->loadModel("../../data/lbfmodel.yaml");
     
     //    detector = get_frontal_face_detector();
@@ -271,7 +271,7 @@ int main(int argc, char** argv)
     resizeWindow("FOOD-FIGHTER", 640, 480);
     setMouseCallback("FOOD-FIGHTER", onMouseEvent);
     
-    imshow("FOOD-FIGHTER", image);
+    imshow("FOOD-FIGHTER", image); // 게임 화면
     waitKey(0);
     
     
@@ -295,7 +295,7 @@ void draw_glvertex(int max, int y)
     
 }
 
-void draw_life()
+void draw_life() // life draw fucntion
 {
     glColor3f(1.0, 0.0, 0.0); //도형색을 빨간색으로 지정
     int max = 1200;
@@ -383,7 +383,7 @@ GLuint MatToTexture(Mat image) //OpenCV의 Mat이미지를 gluint 텍스처로 �
 
 void endGame(int success = 0)
 {
-    life = 0;
+    life = 0; 
     glutLeaveMainLoop();
     
     sleep(1);
@@ -687,7 +687,7 @@ void onMouseEvent(int event, int x, int y, int flags, void *i = 0)
             started = false;
             menu = true;
             Mat image = cv::imread("../../image/menu_c.PNG", cv::IMREAD_COLOR);
-            imshow("FOOD-FIGHTER", image);
+            imshow("FOOD-FIGHTER", image); // 메뉴 이미지 불러오
             waitKey(1);
         }
         
@@ -771,58 +771,7 @@ void faceCam()
         cv::flip(im, im, 1);
     }
     
-    //  cv_image<bgr_pixel> cimg(im);
-    
-    
-    //  std::vector<dlib::rectangle> dets = detector(cimg);
-    
-    //  std::vector<full_object_detection> shapes;
-    //  for (unsigned long j = 0; j < player_num; ++j)
-    //  {
-    
-    //      auto shape = sp(cimg, dets[j]);
-    
-    //      std::vector<cv::Point> facepts;
-    //      std::vector<cv::Point> lippts;
-    //      for (unsigned long i = 0; i< shape.num_parts() ;i++) {
-    
-    
-    
-    //          if(i<=27)
-    //          {
-    //              auto pt = shape.part(i);
-    //              auto pt_cv = cv::Point(int(pt.x()), int(pt.y()));
-    //              facepts.push_back(pt_cv);
-    //          }
-    //          if(i>=60 && i<=65)
-    //          {
-    //              auto pt = shape.part(i);
-    //              auto pt_cv = cv::Point(int(pt.x()), int(pt.y()));
-    //              lippts.push_back(pt_cv);
-    //          }
-    
-    
-    
-    //      }
-    ////      for(int i = 0; i <68; i++)
-    ////      {
-    ////          if(i<=27)
-    ////          {
-    ////              auto pt_cv = cv::Point(int(0), int(0));
-    ////              facepts.push_back(pt_cv);
-    ////          }
-    ////          if(i>=60 && i<=65)
-    ////          {
-    ////              auto pt_cv = cv::Point(int(0), int(0));
-    ////              lippts.push_back(pt_cv);
-    ////          }
-    ////      }
-    
-    
-    //      facePts.push_back(facepts);
-    //      pts.push_back(lippts);
-    
-    //  }
+
     
     std::vector<Rect> faces;
     cvtColor(frame, gray, COLOR_BGR2GRAY);
