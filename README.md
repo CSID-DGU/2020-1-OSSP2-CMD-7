@@ -32,7 +32,7 @@ Develop Enviornment : Ubuntu Linux Extension Pack(16.04 버전 사용)
 ```
 
 ## 5. 실행 방법
-1. opencv 설치
+1.opencv 설치
 
 4.0 버전 이상만 호환가능합니다.
 
@@ -40,13 +40,13 @@ https://sunkyoo.github.io/opencv4cvml/OpenCV4Linux.html
 
 위의 페이지를 참고하여 설치해주세요.
 
-2. opengl 설치
+2.opengl 설치
 ```
 $ sudo apt-get update
 $ sudo apt-get install -y build-essential
 $ sudo apt-get install freeglut3-dev libglu1-mesa-dev mesa-common-dev
 ```
-3. 프로젝트 실행하기
+3.프로젝트 실행하기
 ```
 $ git clone https://github.com/CSID-DGU/2020-1-OSSP2-CMD-7.git
 $ cd FaceGame
@@ -55,7 +55,7 @@ $ cd build
 $ cd bin
 $ ./food_fighter
 ```
-4. 추가적인 성능향상
+4.추가적인 성능향상
 
 gpu를 이용하여 성능 향상이 가능합니다. (가상머신에선 불가능합니다.)
 
